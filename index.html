@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/images/myLogo.png">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>NASA Trivia</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="description">
+            <h1>Welcome to NASA Trivia!</h1>
+            <p>You will be given 30 seconds to answer each question. The series will begin upon clicking the button below. Good
+                luck!
+            </p>
+        </div>
+        <div class="center">
+            <button id="start">Click here to begin!</button>
+        </div>
+        <div id="correct"></div>
+        <div id="incorrect"></div>
+        <div id="timeup"></div>
+        <div class="formBody">
+            <h2>NASA Quiz</h2>
+            <p>Time Remaining:
+                <span class="timer"></span> seconds</p>
+            <p id="question"></p>
+            <button id="a" class="buttons"></button>
+            <button id="b" class="buttons"></button>
+            <button id="c" class="buttons"></button>
+            <button id="d" class="buttons"></button>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="./assets/javascript/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+body {
+    background-image: url('../images/doodles.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 95vh;
+    font-family: 'Lato', sans-serif;
+}
+
+.formBody, #correct, #incorrect, #timeup {
+    width: 80%;
+    background-image: url('../images/dust_scratches.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+    margin:  10vh auto;
+    text-align: center;
+}
+
+.formBody h2 {
+    padding-top: 1rem;
+}
+
+.formBody p {
+    padding: 1rem;
+}
+
+.description {
+    width: 80%;
+    background-image: url('../images/dust_scratches.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+}
+
+.description p {
+    padding: 1rem;
+}
+
+.description h1 {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons {
+    display: block;
+    margin: auto;
+    margin-top: 1.5rem;
+    background-color: transparent;
+    border: none;
+    padding: 1rem;
+}
+
+.buttons:hover {
+    border: 2px solid green;
+    cursor: pointer;
+}
+
+#incorrect h2, #correct h2, #timeup h2 {
+    padding: 1rem;
+}
