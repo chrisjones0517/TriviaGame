@@ -98,7 +98,6 @@ $(document).ready(() => {
             writeQandA();
         } else {
             clearInterval(thisLoop);
-            console.log('button flag');
             $('.formBody').html(`<h2>Results:</h2><h3>You got ${correctAnswers} right.</h3><h3>You got ${incorrectAnswers} answers wrong.<h3>Time expired on ${timeup} answers.</h3><h3>Your score is ${(correctAnswers / quiz.length) * 100}%.`);
         }
     });
@@ -120,29 +119,13 @@ $(document).ready(() => {
                 questionNum++;
                 timeup++;
                 counter = 3000;
-
-                switch (questionNum) {
-
-                    case 1:
-                        writeQandA();
-
-                        break;
-                    case 2:
-                        writeQandA();
-
-                        break;
-                    case 3:
-                        writeQandA();
-
-                        break;
-                    case 4:
-                        writeQandA();
-
-                        break;
-                    case 5:
-                        clearInterval(thisLoop);
-                        $('.formBody').html(`<h2>Results:</h2><h3>You got ${correctAnswers} right.</h3><h3>You got ${incorrectAnswers} answers wrong.</h3><h3>Time expired on ${timeup} answers.</h3><h3>Your score is ${(correctAnswers / quiz.length) * 100}%.`);
-                        break;
+               
+                if (questionNum === quiz.length) {
+                    clearInterval(thisLoop);
+                    $('.formBody').html(`<h2>Results:</h2><h3>You got ${correctAnswers} right.</h3><h3>You got ${incorrectAnswers} answers wrong.</h3><h3>Time expired on ${timeup} answers.</h3><h3>Your score is ${(correctAnswers / quiz.length) * 100}%.`);
+                    
+                } else {
+                    writeQandA();
                 }
             }
         }, 10);

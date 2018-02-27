@@ -22,6 +22,7 @@ body {
 
 .formBody p {
     padding: 1rem;
+    font-size: 1.2rem;
 }
 
 .description {
@@ -34,6 +35,7 @@ body {
 
 .description p {
     padding: 1rem;
+    font-size: 1.5rem;
 }
 
 .description h1 {
@@ -54,6 +56,7 @@ body {
     background-color: transparent;
     border: none;
     padding: 1rem;
+    font-size: 1.2rem;
 }
 
 .buttons:hover {
