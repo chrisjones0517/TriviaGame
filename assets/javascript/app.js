@@ -74,7 +74,7 @@ $(document).ready(() => {
         if (e === quiz[questionNum].correctAns) {
             correctAnswers++;
             $('.formBody').hide();
-            $('#correct').html(`<h2>You got it right!!!</h2><h2>Good job!!!</h2><img src="../assets/images/launch.gif">`);
+            $('#correct').html(`<h2>You got it right!!!</h2><h2>Good job!!!</h2><img src="https://media.giphy.com/media/10vGECXX0EXH5S/giphy.gif">`);
             $('#correct').show();
             setTimeout(() => {
                 $('#correct').hide();
@@ -109,7 +109,7 @@ $(document).ready(() => {
 
             if (counter === 0) {
                 $('.formBody').hide();
-                $('#timeup').html(`<h2>Time's up!!!</h2><img src="../assets/images/time.gif">`);
+                $('#timeup').html(`<h2>Time's up!!!</h2><img src="https://media.giphy.com/media/d3yxg15kJppJilnW/giphy.gif">`);
                 $('#timeup').show();
                 setTimeout(() => {
                     $('#timeup').hide();
