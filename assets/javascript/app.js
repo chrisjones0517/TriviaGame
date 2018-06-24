@@ -41,7 +41,6 @@ $(document).ready(() => {
     let counter = 3000;
     let questionNum = 0;
     let timer = $('.timer');
-    let points = 0;
     let thisLoop;
     let start = true;
     let correctAnswers = 0;
@@ -68,13 +67,12 @@ $(document).ready(() => {
 
     $('.buttons').click(() => {
         counter = 3000;
-
+        
         let e = event.target.id;
 
         if (e === quiz[questionNum].correctAns) {
             correctAnswers++;
             $('.formBody').hide();
-            $('#correct').html(`<h2>You got it right!!!</h2><h2>Good job!!!</h2><img src="https://media.giphy.com/media/10vGECXX0EXH5S/giphy.gif">`);
             $('#correct').show();
             setTimeout(() => {
                 $('#correct').hide();
@@ -85,9 +83,10 @@ $(document).ready(() => {
         } else {
             incorrectAnswers++;
             $('.formBody').hide();
-            $('#incorrect').html(`<h2>Your answer was incorrect.</h2><h2>The correct answer was (${quiz[questionNum].correctAns}).</h2><h2>${quiz[questionNum].ansDescr}</h2>`);
+            $('#incorrect').prepend(`<h2 class="incorrect">Your answer was incorrect.</h2><h2>The correct answer was (${quiz[questionNum].correctAns}).</h2><h2>${quiz[questionNum].ansDescr}</h2>`);
             $('#incorrect').show();
             setTimeout(() => {
+                $('#incorrect > h2').remove('h2');
                 $('#incorrect').hide();
                 $('.formBody').show();
                 counter = 3000;
@@ -98,7 +97,7 @@ $(document).ready(() => {
             writeQandA();
         } else {
             clearInterval(thisLoop);
-            $('.formBody').html(`<h2>Results:</h2><h3>You got ${correctAnswers} right.</h3><h3>You got ${incorrectAnswers} answers wrong.<h3>Time expired on ${timeup} answers.</h3><h3>Your score is ${(correctAnswers / quiz.length) * 100}%.`);
+            $('.formBody').html(`<h2>Results:</h2><br><br><h3>You got ${correctAnswers} right.</h3><br><h3>You got ${incorrectAnswers} answers wrong.</h3><br><h3>Time expired on ${timeup} answers.</h3><br><h3>Your score is ${(correctAnswers / quiz.length) * 100}%.`);
         }
     });
 
@@ -109,7 +108,6 @@ $(document).ready(() => {
 
             if (counter === 0) {
                 $('.formBody').hide();
-                $('#timeup').html(`<h2>Time's up!!!</h2><img src="https://media.giphy.com/media/d3yxg15kJppJilnW/giphy.gif">`);
                 $('#timeup').show();
                 setTimeout(() => {
                     $('#timeup').hide();
@@ -122,7 +120,7 @@ $(document).ready(() => {
                
                 if (questionNum === quiz.length) {
                     clearInterval(thisLoop);
-                    $('.formBody').html(`<h2>Results:</h2><h3>You got ${correctAnswers} right.</h3><h3>You got ${incorrectAnswers} answers wrong.</h3><h3>Time expired on ${timeup} answers.</h3><h3>Your score is ${(correctAnswers / quiz.length) * 100}%.`);
+                    $('.formBody').html(`<h2>Results:</h2><br><br><h3>You got ${correctAnswers} right.</h3><br><h3>You got ${incorrectAnswers} answers wrong.</h3><br><h3>Time expired on ${timeup} answers.</h3><br><h3>Your score is ${(correctAnswers / quiz.length) * 100}%.`);
                     
                 } else {
                     writeQandA();

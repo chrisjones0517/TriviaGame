@@ -67,3 +67,12 @@ body {
 #incorrect h2, #correct h2, #timeup h2 {
     padding: 1rem;
 }
+
+.incorrect {
+    color: #ff0000;
+}
+
+#incorrect-image {
+    width: 80%;
+    margin: auto;
+}
